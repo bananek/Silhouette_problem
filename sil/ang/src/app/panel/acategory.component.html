@@ -1,0 +1,29 @@
+<div *ngIf="step=='show'">
+<tr *ngFor="let category of categories">
+  <td><a routerLink="/category/{{category.gid}}"># {{category.gid}} <strong>{{ category.genre}}</strong></a> [<a (click)="delete(category)">DELETE</a>] </td>
+</tr>
+  <br />
+  [<a (click)="addNewCategory()">ADD NEW CATEGORY</a>]
+</div>
+
+
+<div *ngIf="step=='add'">
+  <form [formGroup]="categoryForm" (ngSubmit)="addNewCategory($event)">
+
+      <strong>Genre ID </strong><input formControlName="gid" type="value">
+      <strong> Genre </strong><input formControlName="genre" type="text">
+
+    <button type="submit">Add Category.</button>
+  </form>
+</div>
+
+
+
+<div *ngIf="step=='added'">
+  Category successfully added to the database!
+</div>
+
+<div *ngIf="step=='deleted'">
+  Category successfully deleted from the database!
+</div>
+

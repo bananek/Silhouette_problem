@@ -1,0 +1,12 @@
+<div *ngIf="product">
+
+  <div>
+    <h3>{{product.title}}</h3>
+    <strong>Author: </strong> {{product.author}} <br />
+    <strong>Product ID: </strong>{{ product.pid }} <br />
+    <strong>Price: </strong> {{ product.price }} $<br />
+    <strong>Description: </strong> {{product.description}} <br /> <br />
+    <br>
+    [<a (click)="addProduct()">Add to cart</a>]
+  </div>
+</div>

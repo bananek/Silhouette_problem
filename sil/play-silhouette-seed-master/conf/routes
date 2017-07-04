@@ -1,0 +1,75 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                                controllers.ApplicationController.index
+GET         /signOut                         controllers.ApplicationController.signOut
+GET         /authenticate/:provider          controllers.SocialAuthController.authenticate(provider)
+
+GET         /signUp                          controllers.SignUpController.view
+POST        /signUp                          controllers.SignUpController.submit
+
+GET         /signIn                          controllers.SignInController.view
+POST        /signIn                          controllers.SignInController.submit
+
+GET         /password/forgot                 controllers.ForgotPasswordController.view
+POST        /password/forgot                 controllers.ForgotPasswordController.submit
+GET         /password/reset/:token           controllers.ResetPasswordController.view(token: java.util.UUID)
+POST        /password/reset/:token           controllers.ResetPasswordController.submit(token: java.util.UUID)
+GET         /password/change                 controllers.ChangePasswordController.view
+POST        /password/change                 controllers.ChangePasswordController.submit
+
+GET         /account/email/:email            controllers.ActivateAccountController.send(email: String)
+GET         /account/activate/:token         controllers.ActivateAccountController.activate(token: java.util.UUID)
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file                    controllers.Assets.at(path="/public", file)
+GET         /webjars/*file                   controllers.WebJarAssets.at(file)
+
+
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           @controllers.Application.index
+#GET     /browse                     @controllers.Application.browse
+GET     /browse                     @controllers.ApplicationController.browse
+GET     /product                    @controllers.Application.product(id: Int ?=0)
+GET     /categories                 @controllers.Application.categories
+GET     /category                   @controllers.Application.category(id: Int ?=0)
+GET     /getcategory                @controllers.Application.getcat(id: Int ?=0)
+GET     /cart                       @controllers.Application.cart
+#GET     /createproduct              @controllers.Application.createproduct
+GET     /showorders                 @controllers.Application.showorders
+
+
+GET     /pbrowse                     @controllers.Application.pbrowse
+
+POST    /newparcel                   @controllers.Application.newparcel
+
+
+POST    /newproduct                 @controllers.Application.newproduct
+POST    /sendorder                  @controllers.Application.sendorder
+POST   /addtocart                     @controllers.Application.addtocart
+POST    /newcategory                @controllers.Application.newcategory
+
+
+
+GET     /removefromcart/:title      @controllers.Application.removefromcart(title: String)
+GET     /removeproduct/:pid         @controllers.Application.removeproduct(pid: Int)
+GET     /removecategory/:gid        @controllers.Application.removecategory(gid: Int)
+GET     /removeorder/:oid           @controllers.Application.removeorder(oid: Int)
+
+GET     /removeparcel/:oid           @controllers.Application.removeparcel(oid: Int)
+
+
+GET     /showtest                   @controllers.Application.showtest
+POST    /removetest                @controllers.Application.removetest(t: Int ?=0)
+POST    /newtest                    @controllers.Application.newtest
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

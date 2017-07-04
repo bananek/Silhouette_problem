@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Main Page</title>
+</head>
+
+<body>
+
+<div align="center">
+  <tr class="spaceUnder">
+    <h1>
+    <td><a href="/mainPage">Main Page</a></td>
+    <td><a routerLink="/products">Browse Books</a></td>
+    <td><a routerLink="/categories">Browse by genre</a></td>
+    <td><a routerLink="/cart">Cart</a></td>
+    <td><a routerLink="/login">Sign up/out</a></td>
+    </h1>
+  </tr>
+</div>
+
+<div *ngIf="admin==1" id="AdminTable">
+  <tr>
+    <td><strong>ADMIN PANEL:</strong></td>
+    <td><a routerLink="/admin/products">MANAGE PRODUCTS</a></td>
+    <td><a routerLink="/admin/categories">MANAGE CATEGORIES</a></td>
+    <td><a routerLink="/admin/orders">MANAGE ORDERS</a></td>
+    <td><a routerLink="/admin/users">MANAGE USERS</a></td>
+  </tr>
+</div>
+
+
+
+<div align="center" id="Table">
+<router-outlet></router-outlet>
+</div>
+</body>
+</html>
+

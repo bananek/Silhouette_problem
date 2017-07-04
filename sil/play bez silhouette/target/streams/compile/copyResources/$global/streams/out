@@ -1,0 +1,6 @@
+[debug] Copy resource mappings: 
+[debug] 	(N:\ebiznes\PARCEL\ec\play\conf\application.conf,N:\ebiznes\PARCEL\ec\play\target\scala-2.11\classes\application.conf)
+[debug] 	(N:\ebiznes\PARCEL\ec\play\conf\evolutions,N:\ebiznes\PARCEL\ec\play\target\scala-2.11\classes\evolutions)
+[debug] 	(N:\ebiznes\PARCEL\ec\play\conf\routes,N:\ebiznes\PARCEL\ec\play\target\scala-2.11\classes\routes)
+[debug] 	(N:\ebiznes\PARCEL\ec\play\conf\evolutions\default,N:\ebiznes\PARCEL\ec\play\target\scala-2.11\classes\evolutions\default)
+[debug] 	(N:\ebiznes\PARCEL\ec\play\conf\evolutions\default\1.sql,N:\ebiznes\PARCEL\ec\play\target\scala-2.11\classes\evolutions\default\1.sql)

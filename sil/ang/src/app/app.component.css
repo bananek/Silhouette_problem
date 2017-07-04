@@ -1,0 +1,25 @@
+#Table {
+  height: 65%;
+  border: 5px solid;
+  padding-left: 20px;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin: 10px
+}
+
+#AdminTable {
+  width: 700px;
+  left: 200px;
+  border: 3px solid;
+  color: red;
+  margin: auto;
+}
+
+tr.spaceUnder>td {
+  padding-bottom: 1em;
+}
+
+td {
+  padding-left: .5em;
+  padding-right: .5em;
+}

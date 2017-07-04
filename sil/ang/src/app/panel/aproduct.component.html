@@ -1,0 +1,55 @@
+<div *ngIf="step=='show'">
+
+<tr *ngFor="let product of products">
+  <td><a routerLink="/showProduct/{{product.pid}}"> #{{product.pid}} <strong>{{ product.title}}</strong></a> [<a (click)="edit(product.pid)">EDIT</a>][<a (click)="delete(product)">DELETE</a>] </td>
+</tr>
+<br>
+
+[<a (click)="addNewProduct()">ADD NEW PRODUCT</a>]
+</div>
+
+<div *ngIf="step=='add'">
+  <form [formGroup]="productForm" (ngSubmit)="addNewProduct($event)">
+
+      <strong>Title </strong><input formControlName="title" type="text">
+      <strong> Author </strong><input formControlName="author" type="text">
+      <strong> Description </strong><input formControlName="description" type="text">
+      <strong> Product ID </strong><input formControlName="pid" type="value">
+      <strong> Genre </strong><input formControlName="gid" type="value">
+      <strong> Price </strong><input formControlName="price" type="value" placeholder="$$$">
+
+    <button type="submit">Add Product.</button>
+  </form>
+</div>
+
+
+
+<div *ngIf="step=='edit'">
+  <div *ngIf="edprod">
+
+  <form [formGroup]="edForm" (ngSubmit)="editProduct($event)">
+
+    <strong>Title </strong><input formControlName="title" type="text">
+    <strong> Author </strong><input formControlName="author" type="text">
+    <strong> Description </strong><input formControlName="description" type="text">
+    <strong> Product ID </strong><input formControlName="pid" type="value">
+    <strong> Genre </strong><input formControlName="gid" type="value">
+    <strong> Price </strong><input formControlName="price" type="value">
+
+    <button type="submit">Edit Product.</button>
+  </form>
+
+</div>
+</div>
+
+<div *ngIf="step=='added'">
+  Product successfully added to the database!
+</div>
+
+<div *ngIf="step=='deleted'">
+  Product successfully deleted from the database!
+</div>
+
+<div *ngIf="step=='edited'">
+  Product successfully edited!
+</div>

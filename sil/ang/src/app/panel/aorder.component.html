@@ -1,0 +1,19 @@
+<div *ngIf="step=='show'">
+<tr *ngFor="let parcel of parcels">
+  <td>
+    <strong>#{{parcel.oid}} {{parcel.uid}}</strong><br />
+    <strong>Shipment Method:</strong>  {{parcel.shipment}}<br />
+    <strong>Payment Method:</strong>  {{parcel.payment}}<br />
+    <strong>Delivery Address:</strong> {{parcel.address}}<br />
+    <strong>List of Products: </strong> {{parcel.productlist}}<br />
+    <strong>Total Price: </strong> {{parcel.price}}$<br />
+    [<a (click)="delete(parcel)">DELETE ORDER</a>]<br />
+    <br />
+  </td>
+  <br /><br />
+</tr>
+</div>
+
+<div *ngIf="step=='deleted'">
+  Product successfully deleted from the database!
+</div>

@@ -1,0 +1,10 @@
+<div>
+ <h3><strong>Cart details:</strong></h3>
+  <br>
+  <li *ngFor="let cart of mercs">
+    {{ cart.title}}:  {{cart.price}}$ [<a (click)="remove(cart)">delete</a>]
+  </li>
+
+  <a routerLink="/orderSummary">Check Out.</a>
+
+</div>

@@ -1,0 +1,136 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png">
+  <title>Silhouette - Sign In</title>
+  <link href="//fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/assets/styles/main.css">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<main class="container">
+  <div class="starter-template row">
+
+
+
+
+    <fieldset class="col-md-6 col-md-offset-3">
+      <legend>Sign in with your credentials</legend>
+
+
+      <form action="/signIn" method="POST" >
+
+        <input type="hidden" name="csrfToken" value="2d780f3e8cf192a4860964981854a6fe2ce2cc59-1499197937243-92682e469906c682e558b355"/>
+
+
+
+        <div class="form-group  " id="email_field">
+
+
+          <label class="control-label sr-only" for="email">Email</label>
+
+
+
+
+          <input type="email" id="email" name="email" value="" class="form-control form-control input-lg" placeholder="Email">
+
+
+
+
+
+
+        </div>
+
+
+
+        <div class="form-group  " id="password_field">
+
+
+          <label class="control-label sr-only" for="password">Password</label>
+
+
+
+
+          <input type="password" id="password" name="password" value="" required="true" class="form-control form-control input-lg" placeholder="Password">
+
+
+
+
+
+
+        </div>
+
+
+
+
+        <div class="form-group  " id="rememberMe_field">
+
+
+
+
+          <div class="checkbox">
+            <label for="rememberMe">
+              <input type="checkbox" id="rememberMe" name="rememberMe" value="true" checked="true">
+              Remember my login on this computer
+            </label>
+
+          </div>
+
+
+
+
+        </div>
+
+        <div class="form-group">
+          <div>
+            <button id="submit" type="submit" value="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
+          </div>
+        </div>
+
+      </form>
+
+
+      <div>
+        <p class="not-a-member">Not a member? <a href="/signUp">Sign up now</a> | <a href="/password/forgot" title="Forgot your password?">Forgot your password?</a></p>
+      </div>
+
+
+      <div class="social-providers">
+        <p>Or use your existing account on one of the following services to sign in:</p>
+        <div>
+
+          [<a (click)="auth(afacebook)">FACEBOOK</a>]
+          [<a (click)="auth(agoogle)">GOOGLE</a>]
+
+        </div>
+
+
+        <script type="text/javascript" src="https://clef.io/v3/clef.js" class="clef-button" data-app-id="" data-color="blue" data-style="flat" data-redirect-url="http://localhost:9000/authenticate/clef" data-type="login"></script>
+
+
+      </div>
+
+
+    </fieldset>
+
+  </div>
+</main>
+<script type="text/javascript" src="/webjars/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+<script src="/assets/javascripts/zxcvbnShim.js"></script>
+</body>
+</html>

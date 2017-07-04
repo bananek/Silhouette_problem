@@ -1,0 +1,70 @@
+<div *ngIf="step==1">
+  <h2>DELIVERY DETAILS</h2>
+
+  <form (ngSubmit)="showSummary()">
+
+    <div>
+      Choose delivery method:
+      <select  id="shippment" required [(ngModel)]="model.shipment" name="shipment">
+       <option *ngFor="let method of shipment">{{method}}</option>
+      </select><br>
+
+
+      Choose payment method:
+      <select id="payment" required [(ngModel)]="model.payment" name="payment">
+        <option *ngFor="let pay of payment">{{pay}}</option>
+      </select><br>
+
+      Address:
+      <input id="address" type="text" placeholder="Delivery address" size="100" [(ngModel)]="model.address" name="address">
+
+    </div>
+
+    <button type="submit">Send</button>
+  </form>
+
+
+</div>
+
+<div *ngIf="step==2">
+
+  <h2>ORDER SUMMARY</h2>
+  <br>
+  <strong>List of products:</strong><br>
+
+  <li *ngFor="let cart of mercs">
+     {{ cart.title}} ({{cart.price}} $)
+  </li><br>
+  <strong>Total price:</strong> {{totalPrice}} $<br>
+
+  <strong>Delivery via:</strong> {{model.shipment}}<br>
+  <strong>Payment method:</strong> {{model.payment}}<br>
+  <strong>Delivery address:</strong> {{model.address}}<br>
+
+  <br>
+  <form (ngSubmit)="sendOrder()">
+    <button type="submit">Send Order</button>
+  </form>
+</div>
+
+<div *ngIf="step==3">
+  The order has been sent!
+</div>
+
+
+
+  <div *ngIf="step==0">
+    <form [formGroup]="orderForm" (ngSubmit)="addOrder($event)">
+
+      <strong>oid </strong><input formControlName="oid" type="value">
+      <strong> productlist </strong><input formControlName="productlist" type="text">
+      <strong> shipment </strong><input formControlName="shipment" type="text">
+      <strong> payment </strong><input formControlName="payment" type="text">
+      <strong> price </strong><input formControlName="price" type="value">
+      <strong> uid </strong><input formControlName="uid" type="text">
+      <strong> address </strong><input formControlName="address" type="text">
+
+      <button type="submit">Add order.</button>
+    </form>
+  </div>
+

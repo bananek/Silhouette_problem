@@ -1,0 +1,38 @@
+<div *ngIf="step=='show'">
+
+  <tr *ngFor="let parcel of parcels">
+    <td> {{parcel.id}}# {{parcel.shipment}} [<a (click)="delete(parcel)">DELETE</a>] </td>
+  </tr>
+  <br>
+
+  [<a (click)="addNewParcel()">ADD NEW PRODUCT</a>]
+</div>
+
+<div *ngIf="step=='add'">
+  <form [formGroup]="parcelForm" (ngSubmit)="addNewParcel($event)">
+
+    <strong>oid </strong><input formControlName="oid" type="value">
+    <strong> productlist </strong><input formControlName="productlist" type="text">
+    <strong> shipment </strong><input formControlName="shipment" type="text">
+    <strong> payment </strong><input formControlName="payment" type="text">
+    <strong> price </strong><input formControlName="price" type="value">
+    <strong> uid </strong><input formControlName="uid" type="text">
+    <strong> address </strong><input formControlName="address" type="text">
+
+    <button type="submit">Add Parcel.</button>
+  </form>
+</div>
+
+
+
+<div *ngIf="step=='added'">
+  Product successfully added to the database!
+</div>
+
+<div *ngIf="step=='deleted'">
+  Product successfully deleted from the database!
+</div>
+
+<div *ngIf="step=='edited'">
+  Product successfully edited!
+</div>
